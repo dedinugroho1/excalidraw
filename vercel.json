@@ -1,6 +1,16 @@
 {
-  "buildCommand": "yarn build",
-  "outputDirectory": "excalidraw-app/build",
-  "installCommand": "yarn install",
-  "framework": null
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "excalidraw-app/build"
+      }
+    }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
