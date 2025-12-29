@@ -2,7 +2,7 @@
   "public": true,
   "framework": null,
   "installCommand": "yarn install",
-  "buildCommand": "yarn --cwd ./excalidraw-app build",
+  "buildCommand": "yarn build",
   "headers": [
     {
       "source": "/(.*)",
@@ -39,5 +39,9 @@
       ]
     }
   ],
-  "outputDirectory": "excalidraw-app/build"
+  "outputDirectory": "excalidraw-app/build",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
